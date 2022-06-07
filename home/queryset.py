@@ -1,22 +1,22 @@
-from home.models import People
+from home.models import People, Product
 
 # Adding a new entry to a list of records
-user = People(name="Oscarss")
+user = Product(brand="Toyota", price = "$50,000")
 user.save()
 
 # Getting all the entries in our list of records
-all_users = People.objects.all()
-print(all_users)  
+all_products = Product.objects.all()
+print(all_products)  
 
 # Getting the items by primary key
-key = People.objects.get(pk=1)
+key = Product.objects.get(pk=1)
 print(key)
 
 # Getting the entry by name
-contents = People.objects.get(name = "Oscarss")
+contents = Product.objects.get(brand = "Toyota")
 print(contents)
 
 # Changing an entry's value in a database
-contents.name = "Jeremiah"
+contents.price = "$200,000"
 contents.save()
 

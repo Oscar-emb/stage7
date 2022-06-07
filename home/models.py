@@ -30,3 +30,11 @@ class Bio(models.Model):
 
     def __str__(self):
         return self.bio
+
+class Product(models.Model):
+    price = models.CharField(max_length=5000, default=" ")
+    brand = models.CharField(max_length=2000, default=" ")
+    user = models.OneToOneField(People, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return self.brand
